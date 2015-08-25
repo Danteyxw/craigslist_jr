@@ -6,7 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :email
       t.decimal :price
       t.string :key
-      t.integer :categories_id, null: false
+      t.integer :category_id, null: false
       t.timestamp null: false
     end
   end
