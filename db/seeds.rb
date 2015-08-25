@@ -11,6 +11,6 @@ Category.all.each do |category|
                  email: Faker::Internet.email,
                  price: rand(1001),
                  key: Faker::Internet.password(8),
-                 categories_id: category.id)
+                 category_id: category.id)
   end
 end
