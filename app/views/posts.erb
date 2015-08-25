@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Craigslist Jr.</h1>
+
+  <h2><%= @category %></h2>
+
+  <ol>
+    <% @posts.each do |post| %>
+      <li><%= post.title %></li>
+    <% end %>
+  </ol>
+</div>
