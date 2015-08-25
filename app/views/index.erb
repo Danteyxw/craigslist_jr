@@ -1,11 +1,25 @@
 <div class="container">
   <h1>Craigslist Jr.</h1>
 
-  <form action="/posts" method="get">
+  <h2>Categories</h2>
+
+  <form action="/posts" method="post">
     <% Category.all.each do |category| %>
-      <input type="radio" name="category" value=<%= category.name %>><%= category.name %>
+      <input type="radio" name="category" value=<%= category.name %>> <%= category.name %>
     <% end %>
     <br>
+    <br>
+    <input type="submit" value="Enter">
+  </form>
+
+  <h2>Create a new post</h2>
+    <form action="/editor_create" method="post">
+    Category:
+    <select name="category">
+      <% Category.all.each do |category| %>
+        <option value=<%= category.name %>><%= category.name %></option>
+      <% end %>
+    </select>
     <input type="submit" value="Enter">
   </form>
 </div>
