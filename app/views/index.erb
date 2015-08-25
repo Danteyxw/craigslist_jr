@@ -12,14 +12,30 @@
     <input type="submit" value="Enter">
   </form>
 
-  <h2>Create a new post</h2>
-    <form action="/editor_create" method="post">
+  <h2>Create a post</h2>
+
+  <form action="/create_post" method="post">
     Category:
     <select name="category">
       <% Category.all.each do |category| %>
         <option value=<%= category.name %>><%= category.name %></option>
       <% end %>
     </select>
+    <br>
+    Title: <input type="text" name="title" required>
+    <br>
+    Description: <textarea name="description"></textarea>
+    <br>
+    Email: <input type="text" name="email" required>
+    <br>
+    Price: <input type="number" name="price">
+    <br>
+    <input type="submit" value="Enter">
+  </form>
+
+  <h2>Edit a post</h2>
+  <form action="/edit_post" method="post">
+    <input type="text" name="key" placeholder="Your key">
     <input type="submit" value="Enter">
   </form>
 </div>

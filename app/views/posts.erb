@@ -3,9 +3,16 @@
 
   <h2><%= session[:category] %></h2>
 
+  <a href="/">return</a>
+
   <ol>
-    <% session[:posts].each do |post| %>
-      <li><%= post.title %></li>
+    <% session[:posts].reverse.each do |post| %>
+      <li>
+        <h3><%= post.title %></h3>
+        <p>description: <%= post.description %></p>
+        <p>email: <%= post.email %></p>
+        <p>price: <%= post.price %></p>
+      </li>
     <% end %>
   </ol>
 </div>
